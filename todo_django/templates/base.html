@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <style>
+      .todo {
+        border: 1px gray solid;
+        padding: 10px;
+        flex-shrink: 0;
+        max-width: 600px;
+        margin-bottom: 10px;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Todo App</header>
+
+    {% block register %} {% endblock register %} 
+
+    {% block todos %} {% endblock todos %}
+  </body>
+</html>

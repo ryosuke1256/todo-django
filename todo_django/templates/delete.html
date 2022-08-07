@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block todos %}
+    <form action="" method="POST">{% csrf_token %}
+        <input type="submit" value="削除">
+    </form>
+{% endblock todos %}

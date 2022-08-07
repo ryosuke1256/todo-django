@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block register %}
+    <form action="/" method="post">
+      {% csrf_token %}
+      <input type="text" name="memo" />
+      <input type="submit" value="送信" />
+    </form>
+{% endblock register %}
+
+{% block todos %}
+    <ul style="display: flex; flex-direction: column">
+      {% for todo in todos %}
+        {% if todo.is_done == True %}
+          <li class="todo" style="background-color: rgb(226, 226, 226)">
+        {% else %}
+          <li class="todo">
+        {% endif %}
+        <span name="todo">{{ todo.memo }}</span>
+        <span>{{ todo.updated_at }}</span>
+        <a href="{% url 'update' todo.pk %}">編集</a>
+        <a href="{% url 'delete' todo.pk %}">削除</a>
+      </li>
+      {% endfor %}
+    </ul>
+{% endblock todos %}
